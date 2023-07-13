@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    background: #000;
+    color: #fff;
+}
+
+.snow_container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+}
+
+.snowflake,
+.snowflake:before,
+.snowflake:after {
+    position: absolute;
+    top: -650px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    background-image: radial-gradient(5px 5px at 50px 150px, #845EC2, transparent),
+                        radial-gradient(3px 3px at 100px 200px, #D65DB1, transparent),
+                        radial-gradient(4px 4px at 150px 450px, #FF6F91, transparent),
+                        radial-gradient(5px 5px at 200px 50px, #FF9671, transparent),
+                        radial-gradient(3px 3px at 250px 250px, #FFC75F, transparent),
+                        radial-gradient(4px 4px at 300px 350px, #F9F871, transparent),
+                        radial-gradient(5px 5px at 350px 300px, #FF8066, transparent),
+                        radial-gradient(3px 3px at 400px 400px, #FEFEDF, transparent),
+                        radial-gradient(5px 5px at 450px 500px, #00C9A7, transparent);
+
+    background-size: 650px 650px;
+    animation: snowflakeAnimation 3s linear;
+    animation-iteration-count: infinite;
+}
+
+.snowflake:after {
+    margin-leFt: -200px;
+    opacity: 0.5;
+    filter: blur(2px);
+    animation-direction: reverse;
+    animation-duration: 6s;
+}
+
+.snowflake:before {
+    margin-leFt: -300px;
+    opacity: 0.7;
+    filter: blur(1px);
+    animation-direction: reverse;
+    animation-duration: 9s;
+}
+
+@keyframes snowflakeAnimation {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(650px);
+    }
+}
